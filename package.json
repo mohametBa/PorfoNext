@@ -2,8 +2,7 @@
   "name": "first-app",
   "version": "0.1.0",
   "private": true,
-  "type":"module"
-,    "scripts": {
+  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
