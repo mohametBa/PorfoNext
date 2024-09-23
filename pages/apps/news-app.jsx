@@ -6,7 +6,6 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import Theme from "@/utils/Theme";
-import { savedArticles } from "@/constants/NewsData";
 import BackTo from "@/components/buttons/BackTo";
 
 const NewsApp = () => {
