@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, createContext, useEffect } from "react";
 
-//import LightningAnimation from "./LightningAnimation";
+import LightningAnimation from "./LightningAnimation";
 
 export const ThemeContext = createContext();
 

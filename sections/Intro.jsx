@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import ImageGrid from "./ImageGrid"; // Importer le nouveau composant
+import ImageGrid from "./ImageGrid"; 
 
 const Intro = () => {
   const [isHome, setIsHome] = useState(false);
@@ -12,7 +12,6 @@ const Intro = () => {
   const introRef = useRef();
   const profileRef = useRef();
 
-  // Intersection observer animation on scroll
   useEffect(() => {
     const getScreenWidth = () =>
       window.innerWidth ||
