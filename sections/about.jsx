@@ -1,12 +1,13 @@
 import React, { Fragment, useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import { FaBlackTie, FaUserCheck } from "react-icons/fa";
 import { ImLocation } from "react-icons/im";
 import { BsMenuAppFill } from "react-icons/bs";
+import { motion } from "framer-motion";
+
+import ThreeDAnimation from "../utils/SpinningCube"; // Import du composant 3D
 
 const About = () => {
   const [isAbout, setIsAbout] = useState(false);
-
   const aboutRef = useRef();
   const profile2Ref = useRef();
   const aboutInfoRef = useRef();
@@ -40,10 +41,12 @@ const About = () => {
     }
   }, [isAbout, aboutRef]);
 
+  const text = "Développeur ReactJS passionné et motivé, avec une solide maîtrise du stack MERN et de React. Désireux de contribuer mon expertise en frameworks frontend, en design moderne UI/UX et en développement responsive à une équipe avant-gardiste, tout en continuant à apprendre et à évoluer dans le monde en constante mutation du développement web et mobile.".split(" ");
+
   return (
     <Fragment>
       <section
-        className=" shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden"
+        className="shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden"
         id="about"
         ref={aboutRef}
       >
@@ -51,17 +54,13 @@ const About = () => {
           <FaUserCheck /> About me
         </h2>
         <div className="pb-[30px] px-[20px] md:px-[100px] lg:px-[200px] md:flex gap-[50px]">
-          {/* Person Image */}
-          <Image
-            alt="about image"
-            className={
-              "shadow-zinc-300 dark:shadow-zinc-700 shadow-sm transition-all duration-700 translate-x-[-900px] bg-blue-200 m-auto bg-cover bg-no-repeat max-h-[500px] rounded object-contain"
-            }
-            height={350}
+          {/* Remplace l'image par l'animation 3D */}
+          <div
+            className="shadow-zinc-300 dark:shadow-zinc-700 shadow-sm transition-all duration-700 translate-x-[-900px] m-auto"
             ref={profile2Ref}
-            src="https://res.cloudinary.com/dhynjkxad/image/upload/v1726693995/maosf2rwmntitmyvw0yw.png"
-            width={350}
-          />
+          >
+            <ThreeDAnimation />
+          </div>
           <div
             className="text-lg translate-x-[900px] opacity-0 transition-all duration-700 mt-4 md:mt-0 md:w-[50%] text-center md:text-left rounded"
             ref={aboutInfoRef}
@@ -120,25 +119,19 @@ const About = () => {
             </div>
             <div className="mt-5 justify-evenly text-justify">
               <p className="font-cursive text-gray-600 dark:text-gray-300">
-                Développeur ReactJS passionné et motivé, avec une solide
-                maîtrise du stack{" "}
-                <span className="font-bold text-aqua">MERN</span> et de
-                <span className="font-bold text-aqua"> React</span>. Dédié à la
-                création d&lsquo;applications web dynamiques et centrées sur
-                l&lsquo;utilisateur. Désireux de contribuer mon expertise en
-                frameworks frontend, en
-                <span className="font-bold text-aqua">
-                  {" "}
-                  design moderne UI/UX
-                </span>{" "}
-                et en
-                <span className="font-bold text-aqua">
-                  {" "}
-                  développement responsive
-                </span>{" "}
-                à une équipe avant-gardiste, tout en continuant à apprendre et à
-                évoluer dans le monde en constante mutation du développement web
-                et mobile.
+                {text.map((el, i) => (
+                  <motion.span
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    key={i}
+                    transition={{
+                      duration: 0.25,
+                      delay: i / 10,
+                    }}
+                  >
+                    {el}{" "}
+                  </motion.span>
+                ))}
               </p>
             </div>
           </div>

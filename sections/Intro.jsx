@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import ImageGrid from "./ImageGrid"; 
+import ProfileImageGrid from "@/utils/ProfileImage";
 
 const Intro = () => {
   const [isHome, setIsHome] = useState(false);
@@ -12,6 +12,7 @@ const Intro = () => {
   const introRef = useRef();
   const profileRef = useRef();
 
+  // Intersection observer animation on scroll
   useEffect(() => {
     const getScreenWidth = () =>
       window.innerWidth ||
@@ -44,7 +45,7 @@ const Intro = () => {
   return (
     <Fragment>
       <Head>
-        <title>Mohamet&apos;s Portfolio</title>
+        <title>mohamet&apos;s Portfolio</title>
       </Head>
       <section id="home">
         <div
@@ -68,26 +69,27 @@ const Intro = () => {
             <div className="mt-5 md:mt-10 flex gap-3">
               <Link
                 className="text-white text-xl font-semibold rounded bg-red-400 hover:bg-red-500 px-2 py-1"
-                href={"#getInTouch"}
+                href="https://www.linkedin.com/in/mohamet-ba-3024b8211/"
               >
-                Contactez-moi
+                Contact
               </Link>
-
               <Link
                 className="text-xl font-semibold rounded border border-red-500 hover:text-white hover:bg-red-500 px-2 py-1"
                 href="https://drive.google.com/file/d/1PiK5o01z40V-_tUHz4SI7ZmIW3_F1tyD/view?usp=sharing"
                 target="_blank"
               >
-                Telecharger mon CV
+                Download CV
               </Link>
             </div>
           </div>
 
           <div
-            className="w-[180px] h-[400px] md:w-[460px] md:h-[400px] m-auto md:m-0 mt-[40px] md:mt-0"
+            className={
+              "translate-x-[400px] transition-all opacity-0 duration-700 w-[180px] h-[300px] md:w-[240px] md:h-[400px] bg-cover m-auto md:m-0 mt-[40px] md:mt-0 bg-no-repeat"
+            }
             ref={profileRef}
           >
-            <ImageGrid columns={5} imgSrc="/images/imagemomo.png" rows={5} />
+            <ProfileImageGrid />
           </div>
         </div>
       </section>

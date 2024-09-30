@@ -1,17 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-
 
 * {
   scroll-behavior: smooth !important;
   -webkit-scroll-behavior: smooth !important; /* other browsers */
 }
 
-p, div {
+p,
+div {
   text-align: justify;
-  font-family: 'Dancing Script', cursive;
 }
 
 .sectionHeading {
@@ -92,26 +90,14 @@ p, div {
   transform: scale(0.9);
 }
 
-.placeholder {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 
-.gridContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 
-.gridTile {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
+
+
+
+
+
+
+
+
 

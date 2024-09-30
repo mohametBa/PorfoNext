@@ -2,21 +2,17 @@ import { Fragment } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-import ShoveeModal from "@/utils/ShoveeModal";
 import About from "@/sections/about";
 import Education from "@/sections/education";
 import Experience from "@/sections/experience";
+import AnimatedButton from "@/components/buttons/AnimatedButton";
 const Navbar = dynamic(() => import("@/layout/navbar/Navbar"))
 const Footer = dynamic(() => import("@/layout/footer/Footer"))
 const Intro = dynamic(() => import("@/sections/Intro"))
 const Skills = dynamic(() => import("@/sections/Skills"))
 const Projects = dynamic(() => import("@/sections/Projects"))
-const LatestBlogs = dynamic(() => import("@/sections/LatestBlogs"))
-const Apps = dynamic(() => import("@/sections/Apps"))
-const SendMail = dynamic(() => import("@/utils/SendMail"))
 const SocialMedia = dynamic(() => import("@/utils/SocialMedia"))
-const ChatSystem = dynamic(() => import("@/utils/ChatSystem"))
-const Feedback = dynamic(() => import("@/utils/Feedback"))
+const ContactForm = dynamic(() => import("@/utils/ContactForm"))
 
 const Home = () => {
 
@@ -25,7 +21,7 @@ const Home = () => {
       <Head>
         <title>Mohamet&apos;s Portfolio</title>
         {/* <!-- Favicon --> */}
-        <link href="../public/images/pirate.ico" rel="icon" type="image/x-icon" />
+        <link href="/images/pirate.ico" rel="icon" type="image/x-icon" />
 
       </Head>
       <div>
@@ -44,19 +40,11 @@ const Home = () => {
           <Experience />
           {/* Projects */}
           <Projects />
+          <AnimatedButton/>
           {/* SocialMedia */}
           <SocialMedia />
-
-          {/* LatestBlog */}
-          <LatestBlogs />
-          {/* Apps */}
-          <Apps />
-          {/* Send Mail */}
-          {/* <SendMail /> */}
-          {/* Footer */}
+          {/* <ContactForm/> */}
           <Footer />
-          {/* Feedback Modal */}
-          <Feedback />
         </div>
       </div>
     </Fragment>
