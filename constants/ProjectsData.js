@@ -64,7 +64,7 @@ export const ProjectsData = [
         techs: ["NodeJs", "JavaScript", "HTML5", "CSS3", "Intersection Objerver"]
     },
     {
-        projectName: "Colis GP Transport de Colis",
+        projectName: "Youtube clone",
         liveUrl: "https://github.com/mohametBa",
         githubUrl: "https://github.com/mohametBa",
         projectImage: {
@@ -73,7 +73,7 @@ export const ProjectsData = [
         techs: ["ReactJS", "ContextAPI", "ChakraUI", "YoutubeAPI","Docker","SocketIO", "MongoDB","Express","JsonWebtoken"]
     },
     {
-        projectName: "Eccommerce Application",
+        projectName: "Ecommerce Application",
         liveUrl: "https://github.com/mohametBa",
         githubUrl: "https://github.com/iamshiv007/ecommerce-frontend",
         projectImage: {
